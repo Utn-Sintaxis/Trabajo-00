@@ -45,8 +45,9 @@ char* scanner(FILE *sentencias){
 				esCorrecto = verificarConstante(caracteres, i);
 				i++;
 				j++;
-				k++
+				k++;
 			}
+			
 		}
 		if((caracteres[j] >= 'A') && ( caracteres[j] >= 'Z')) //es un identificador 
 		{		
@@ -57,7 +58,7 @@ char* scanner(FILE *sentencias){
 					
 					i++;
 					j++;
-					k++
+					k++;
 		}
 
 		}
@@ -68,7 +69,7 @@ char* scanner(FILE *sentencias){
 			while(caracteres[i] != ' ')
 			{
 			 i++
-			
+			 
 		    }  
 		}
 		
