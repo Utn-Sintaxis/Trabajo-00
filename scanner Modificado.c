@@ -34,8 +34,9 @@ char* scanner(FILE *sentencias){
 	int j=0; //creo un contador j para poder comparar y moverme por el resto de las palabras
 	while((caracteres = fgetc(sentencias)) != EOF){ //encuentro la primer letra de cada palabra
             
-		bool esCorrecto = False	// inicializa en False , solo si es constante o indentificador se transforma en True
-
+		bool esCorrecto = False 	// inicializa en False , solo si es constante o indentificador se transforma en True
+        int k = 0  // Si entra en 1 while ya no entra en el if de false
+		
 		if((caracteres[j] >= 0) && (caracteres[j] <=9)) //es una constante numerica
 		{	 
 			int i=0;
@@ -44,6 +45,7 @@ char* scanner(FILE *sentencias){
 				esCorrecto = verificarConstante(caracteres, i);
 				i++;
 				j++;
+				k++
 			}
 		}
 		if((caracteres[j] >= 'A') && ( caracteres[j] >= 'Z')) //es un identificador 
@@ -55,11 +57,12 @@ char* scanner(FILE *sentencias){
 					
 					i++;
 					j++;
+					k++
 		}
 
 		}
 		
-		`if ( esCorrecto == False)
+		`if ( esCorrecto == False && k == 0 )
 		    {
 		      int i=0;
 			while(caracteres[i] != ' ')
